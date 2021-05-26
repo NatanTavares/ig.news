@@ -3,9 +3,9 @@ import { useSession } from "next-auth/client";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 import { RichText } from "prismic-dom";
-import { useEffect } from "react";
 import { getPrismicClient } from "../../../services/prismic";
 
 import styles from "../post.module.scss";
@@ -89,5 +89,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       post,
     },
+    revalidate: 60 * 60, // 1 hour
   };
 };
