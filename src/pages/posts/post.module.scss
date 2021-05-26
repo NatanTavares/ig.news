@@ -6,7 +6,7 @@
 
 .post {
   max-width: 720px;
-  margin: 5rem 0 auto;
+  margin: 5rem auto;
 
   h1 {
     font-size: 3.5rem;
@@ -39,6 +39,33 @@
       li {
         margin: 0.5rem 0;
       }
+    }
+
+    &.previewContent {
+      background: linear-gradient(var(--gray-100), transparent);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.continueReading {
+  padding: 2rem;
+  margin: 4rem 0 2rem;
+
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+
+  border-radius: 100px;
+  background: var(--gray-850);
+
+  a {
+    margin-left: 0.5rem;
+    color: var(--yellow-500);
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
