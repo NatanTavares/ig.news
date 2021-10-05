@@ -39,12 +39,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
       customerId = stripeCustomer.id;
     }
-    
+
     const stripeCheckoutSession = await stripe.checkout.sessions.create({
       customer: customerId,
       payment_method_types: ["card"],
       billing_address_collection: "required",
-      line_items: [{ price: "price_1ItGI3HmSy2DT9TPuSnlbGBV", quantity: 1 }],
+      line_items: [{ price: process.env.STRIPE_PRICE_SUBSCRIBE, quantity: 1 }],
       mode: "subscription",
       allow_promotion_codes: true,
 
