@@ -14,7 +14,7 @@ const postsExample = [
   },
 ];
 
-describe("Post page", () => {
+describe("Posts page", () => {
   it("renders correctly", () => {
     render(<Posts posts={postsExample} />);
 
@@ -28,22 +28,22 @@ describe("Post page", () => {
       query: jest.fn().mockResolvedValueOnce({
         results: [
           {
-            uid: postsExample[0].slug,
+            uid: "slug-example",
             data: {
               title: [
                 {
                   type: "heading",
-                  text: postsExample[0].title,
+                  text: "title-example",
                 },
               ],
               content: [
                 {
                   type: "paragraph",
-                  text: postsExample[0].excerpt,
+                  text: "excerpt-example",
                 },
               ],
             },
-            last_publication_date: postsExample[0].updatedAt,
+            last_publication_date: "01-01-2021",
           },
         ],
       }),
