@@ -9,6 +9,7 @@ import { Async } from ".";
 describe("Async component", () => {
   it("renders correctly", async () => {
     render(<Async />);
+    // screen.logTestingPlaygroundURL();
 
     expect(screen.getByText("Hello World!")).toBeInTheDocument();
 
